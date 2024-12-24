@@ -1,0 +1,68 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #34c94b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-left .logo-image {
+  height: 40px;
+  width: auto;
+}
+
+.navbar-search {
+  width: 100%;
+  max-width: 300px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  height: 40px; /* Define a consistent height */
+}
+
+.search-input {
+  width: 100%;
+  padding: 0 12px; /* Adjust padding */
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px; /* Rounded corners only on the left */
+  outline: none;
+  height: 100%; /* Match the height of the container */
+  font-size: 14px;
+}
+
+.search-button {
+  background-color: #ccc;
+  border: 1px solid #ccc;
+  border-left: none; /* Removes the border between input and button */
+  border-radius: 0 4px 4px 0; /* Rounded corners only on the right */
+  padding: 0 16px; /* Adjust padding for the button */
+  cursor: pointer;
+  height: 100%; /* Match the height of the container */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the icon */
+}
+
+.search-button svg {
+  width: 18px; /* Adjust icon size */
+  height: 18px;
+  color: #000;
+}
+
+.navbar-feedback {
+  background-color: black;
+  color: #34c94b;
+  border: 1px solid black;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.navbar-feedback:hover {
+  background-color: #34c94b;
+  color: black;
+}
