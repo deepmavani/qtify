@@ -1,0 +1,85 @@
+.section {
+    
+    background-color: black; 
+    padding: 0 20px;
+    position: relative; /* For positioning arrows */
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .section-header h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: white;
+
+    margin-top: 10px;
+  }
+  
+  .collapse-button {
+    padding: 8px 16px;
+    background-color: #000000;
+    color: #34C94B;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .section-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ensures flexibility */
+    gap: 16px;
+    padding-top: 20px;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    scroll-behavior: smooth;
+    position: relative;
+    max-width: 100%;
+
+  }
+  .section + .section {
+    margin-top: 0; /* Remove margin between sections */
+  }
+  .scroll-buttons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 40px); /* Adjust width to fit inside with padding */
+    padding: 0 20px;
+    z-index: 10; /* Ensure the arrows are above the cards */
+  }
+  .scroll-left,
+.scroll-right {
+  background-color: #34C94B;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  margin-top: -10px; 
+}
+
+.scroll-left {
+    margin-left: 10px;
+  }
+  
+  .scroll-right {
+    margin-right: 10px;
+  }
+
+.scroll-left:hover,
+.scroll-right:hover {
+  background-color: #28a745;
+}
+
+.scroll-left:focus,
+.scroll-right:focus {
+  outline: none;
+}

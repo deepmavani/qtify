@@ -1,0 +1,17 @@
+.hero {
+    background-color: black; /* Black background */
+    height: 30vh; /* Adjusted height to be 70% of the viewport */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    overflow: hidden; /* Prevent any overflow */
+  }
+  
+  .hero-image {
+    width: auto;
+    max-width: 90%; /* Limit the width to 90% of the container */
+    height: auto;
+    max-height: 90%; /* Limit the height to 60% of the hero section */
+    object-fit: contain; /* Maintain the aspect ratio */
+  }
+  
