@@ -1,13 +1,19 @@
 .navbar {
   display: flex;
-  align-items: center;
+  align-items: center; /* Vertically centers content */
   justify-content: space-between;
   padding: 10px 20px;
   background-color: #34c94b;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-left .logo-image {
+.navbar-left {
+  display: flex;
+  align-items: center; /* Ensures the logo is vertically centered */
+  padding-left: 10px; /* Add space to the left of the logo */
+}
+
+.logo-image {
   height: 40px;
   width: auto;
 }
@@ -60,6 +66,7 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
+  font-family: 'Poppins', sans-serif; /* Add Poppins font */
 }
 
 .navbar-feedback:hover {
