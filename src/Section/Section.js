@@ -59,7 +59,7 @@ const Section = ({ title, apiEndpoint }) => {
           className="collapse-button"
           onClick={() => setCollapsed(!collapsed)}
         >
-          {collapsed ? "Show all" : "Collapse"}
+          {collapsed ? "Show All" : "Collapse"}
         </button>
       </div>
 
