@@ -1,0 +1,86 @@
+/* General styles for the songs section */
+.songs-section {
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for the section */
+    color: #7f3636; /* Dark text color */
+  }
+  
+  /* Title styling */
+  .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #9ab225;
+    background-color: aqua;
+  }
+  
+  /* Tabs styling */
+  .MuiTabs-root {
+    margin-bottom: 20px;
+  }
+  
+  .MuiTab-root {
+    color: #610e0e;
+    font-weight: bold;
+  }
+  
+  .Mui-selected {
+    color: #34c94b !important;
+  }
+  
+  /* Cards container using grid layout */
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
+    gap: 16px;
+    padding: 10px;
+  }
+  
+  /* Individual card styling */
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  /* Card hover effect */
+  .card:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  }
+  
+  /* Card image styling */
+  .card-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd; /* Divider between image and title */
+    object-fit: cover; /* Ensures image covers the container */
+    height: 200px; /* Fixed height for consistency */
+  }
+  
+  /* Card title styling */
+  /* Card title styling */
+.card-title {
+    font-size: 1rem;
+    margin: 8px 0 4px;
+    font-weight: bold;
+    color: rgb(26, 147, 79); /* White text color */
+    background-color: rgb(164, 30, 30); /* Black background */
+    padding: 8px; /* Padding to give some space around the text */
+    border-radius: 4px; /* Optional: rounded corners for the title background */
+  }
+  
+  /* Card subtitle styling */
+  .card-subtitle {
+    font-size: 0.875rem;
+    color: #555;
+  }
+  
