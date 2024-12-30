@@ -1,8 +1,8 @@
 /* General styles for the songs section */
 .songs-section {
     padding: 20px;
-    background-color: #f9f9f9; /* Light background for the section */
-    color: #7f3636; /* Dark text color */
+    background-color: #000000; /* Light background for the section */
+    color: #333; /* Dark text color */
   }
   
   /* Title styling */
@@ -10,9 +10,10 @@
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 20px;
-    text-align: center;
-    color: #9ab225;
-    background-color: aqua;
+    text-align: left; /* Align text to the left */
+    padding-left: 20px; /* Add some space from the left */
+    color: #ffffff;
+    background-color: black;
   }
   
   /* Tabs styling */
@@ -21,23 +22,49 @@
   }
   
   .MuiTab-root {
-    color: #610e0e;
+    color: #ffffff; /* Set the text color to white */
     font-weight: bold;
   }
   
-  .Mui-selected {
-    color: #34c94b !important;
+  /* Wrapper for the scrollable cards */
+  .cards-container-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Hide the overflow content */
   }
   
-  /* Cards container using grid layout */
-  .cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
-    gap: 16px;
+  /* Scroll buttons */
+  .scroll-left,
+  .scroll-right {
+    background: #000;
+    color: #fff;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
     padding: 10px;
   }
   
-  /* Individual card styling */
+  .scroll-left {
+    left: 10px;
+  }
+  
+  .scroll-right {
+    right: 10px;
+  }
+  
+  /* Cards container (horizontal scrollable) */
+  .cards-container {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snaps cards into place */
+  }
+  
   .card {
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -45,10 +72,9 @@
     text-align: center;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow effect */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
+    flex-shrink: 0; /* Prevent cards from shrinking */
+    width: 250px; /* Fixed card width */
+    scroll-snap-align: center; /* Align card in the center on scroll */
   }
   
   /* Card hover effect */
@@ -67,20 +93,10 @@
   }
   
   /* Card title styling */
-  /* Card title styling */
-.card-title {
+  .card-title {
     font-size: 1rem;
     margin: 8px 0 4px;
     font-weight: bold;
-    color: rgb(26, 147, 79); /* White text color */
-    background-color: rgb(164, 30, 30); /* Black background */
-    padding: 8px; /* Padding to give some space around the text */
-    border-radius: 4px; /* Optional: rounded corners for the title background */
-  }
-  
-  /* Card subtitle styling */
-  .card-subtitle {
-    font-size: 0.875rem;
-    color: #555;
+    color: #333;
   }
   

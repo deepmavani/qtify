@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Tabs, Tab } from "@mui/material";
+import "./Songs.css";
 
 const Songs = () => {
   const [songs, setSongs] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState("All");
   const [filteredSongs, setFilteredSongs] = useState([]);
+  const scrollRef = useRef(null);
 
   useEffect(() => {
     const fetchSongs = async () => {
@@ -33,6 +35,24 @@ const Songs = () => {
     }
   };
 
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: -200,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: 200,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div className="songs-section">
       {/* Title for Songs Section */}
@@ -44,7 +64,7 @@ const Songs = () => {
         onChange={handleTabChange}
         variant="scrollable"
         scrollButtons="auto"
-        style={{ marginBottom: "20px" }} // Add spacing between tabs and cards
+        style={{ marginBottom: "20px" }}
       >
         <Tab label="All" value="All" />
         <Tab label="Rock" value="Rock" />
@@ -53,18 +73,27 @@ const Songs = () => {
         <Tab label="Blues" value="Blues" />
       </Tabs>
 
-      {/* Render the cards directly */}
-      <div className="cards-container">
-        {filteredSongs.map((song) => (
-          <div className="card" key={song.id}>
-            <img
-              src={song.image}
-              alt={song.title}
-              className="card-image"
-            />
-            <div className="card-title">{song.title}</div>
-          </div>
-        ))}
+      {/* Scrollable Cards Section */}
+      <div className="cards-container-wrapper">
+        {/* Left Arrow Button */}
+        <button className="scroll-left" onClick={scrollLeft}>
+          &#8592;
+        </button>
+
+        {/* Cards Container */}
+        <div className="cards-container" ref={scrollRef}>
+          {filteredSongs.map((song) => (
+            <div className="card" key={song.id}>
+              <img src={song.image} alt={song.title} className="card-image" />
+              <div className="card-title">{song.title}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Right Arrow Button */}
+        <button className="scroll-right" onClick={scrollRight}>
+          &#8594;
+        </button>
       </div>
     </div>
   );
