@@ -5,14 +5,14 @@ import "./Section.css";
 
 const Section = ({ title, apiEndpoint }) => {
   const [albums, setAlbums] = useState([]);
-  const [collapsed, setCollapsed] = useState(false); // Default is 'false' to show all albums initially
+  const [collapsed, setCollapsed] = useState(true); // Default to 'true' to show "Show All" initially
   const gridRef = useRef(null);
 
   useEffect(() => {
     const fetchAlbums = async () => {
       try {
         const response = await axios.get(apiEndpoint);
-        console.log("Fetched albums:", response.data); // Log to inspect fetched data
+        console.log("Fetched albums:", response.data);
         setAlbums(response.data || []); // Fallback to an empty array if data is null/undefined
       } catch (error) {
         console.error("Error fetching albums:", error);
@@ -22,6 +22,7 @@ const Section = ({ title, apiEndpoint }) => {
     fetchAlbums();
   }, [apiEndpoint]);
 
+  // Show only 6 albums when collapsed
   const visibleAlbums = collapsed ? albums.slice(0, 6) : albums;
 
   const scrollRight = () => {
