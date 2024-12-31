@@ -30,7 +30,7 @@
   }
   .section-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ensures flexibility */
+    grid-template-columns: repeat(7, 1fr);  /* Ensures flexibility */
     gap: 16px;
     padding-top: 20px;
     overflow-x: auto; /* Allow horizontal scrolling */
@@ -52,6 +52,7 @@
     justify-content: space-between;
     width: calc(100% - 40px); /* Adjust width to fit inside with padding */
     padding: 0 20px;
+    margin: 8px 0;
     z-index: 10; /* Ensure the arrows are above the cards */
   }
   .scroll-left,
