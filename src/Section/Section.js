@@ -22,8 +22,8 @@ const Section = ({ title, apiEndpoint }) => {
     fetchAlbums();
   }, [apiEndpoint]);
 
-  // Show only 6 albums when collapsed
-  const visibleAlbums = collapsed ? albums.slice(0, 6) : albums;
+  // Show only 7 albums when collapsed
+  const visibleAlbums = collapsed ? albums.slice(0, 7) : albums;
 
   const scrollRight = () => {
     if (gridRef.current) {
