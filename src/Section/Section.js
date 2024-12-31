@@ -5,7 +5,7 @@ import "./Section.css";
 
 const Section = ({ title, apiEndpoint }) => {
   const [albums, setAlbums] = useState([]);
-  const [collapsed, setCollapsed] = useState(true); // Default to 'true' to show "Show All" initially
+  const [collapsed, setCollapsed] = useState(true);
   const gridRef = useRef(null);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const Section = ({ title, apiEndpoint }) => {
       try {
         const response = await axios.get(apiEndpoint);
         console.log("Fetched albums:", response.data);
-        setAlbums(response.data || []); // Fallback to an empty array if data is null/undefined
+        setAlbums(response.data || []);
       } catch (error) {
         console.error("Error fetching albums:", error);
       }
@@ -22,18 +22,25 @@ const Section = ({ title, apiEndpoint }) => {
     fetchAlbums();
   }, [apiEndpoint]);
 
-  // Show only 7 albums when collapsed
-  const visibleAlbums = collapsed ? albums.slice(0, 7) : albums;
+  const visibleAlbums = collapsed ? albums.slice(0, 7) : albums; // Adjust '6' based on your grid size
 
+  // Function to handle right scroll (smooth scroll)
   const scrollRight = () => {
     if (gridRef.current) {
-      gridRef.current.scrollBy({ left: 200, behavior: "smooth" });
+      gridRef.current.scrollBy({
+        left: 200, // Scroll by 200px to the right
+        behavior: "smooth", // Smooth scroll effect
+      });
     }
   };
 
+  // Function to handle left scroll (smooth scroll)
   const scrollLeft = () => {
     if (gridRef.current) {
-      gridRef.current.scrollBy({ left: -200, behavior: "smooth" });
+      gridRef.current.scrollBy({
+        left: -200, // Scroll by 200px to the left
+        behavior: "smooth", // Smooth scroll effect
+      });
     }
   };
 
@@ -73,15 +80,13 @@ const Section = ({ title, apiEndpoint }) => {
         </div>
       )}
 
-      <div className="section-grid" ref={gridRef}>
-        {visibleAlbums.map((album) => (
-          <Card
-            key={album.id}
-            album={album}
-            onClick={() => handleCardClick(album)}
-          />
-        ))}
-      </div>
+<div className="section-grid" ref={gridRef}>
+  {visibleAlbums.map((album) => (
+    <div className="card-wrapper" key={album.id}>
+      <Card album={album} onClick={() => handleCardClick(album)} />
+    </div>
+  ))}
+</div>
     </div>
   );
 };
