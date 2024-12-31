@@ -1,8 +1,8 @@
 .section {
-    
-    background-color: black; 
-    padding: 0 20px;
-    position: relative; /* For positioning arrows */
+    background-color: black;
+    padding: 20px; /* Uniform padding around the section */
+    position: relative; /* For positioning scroll buttons */
+    border-radius: 10px; /* Rounded corners for the section */
   }
   
   .section-header {
@@ -16,32 +16,71 @@
     font-size: 1.5rem;
     margin: 0;
     color: white;
-
-    margin-top: 10px;
   }
   
   .collapse-button {
     padding: 8px 16px;
-    background-color: #000000;
-    color: #34C94B;
+    background-color: #34c94b;
+    color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
   }
+  
+  .collapse-button:hover {
+    background-color: #28a745;
+  }
+  
   .section-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);  /* Ensures flexibility */
-    gap: 16px;
-    padding-top: 20px;
-    overflow-x: auto; /* Allow horizontal scrolling */
-    scroll-behavior: smooth;
-    position: relative;
+    grid-template-columns: repeat(7, minmax(40px, 1fr)); /* Slightly wider cards for better balance */
+    gap: 10px; /* Space between cards */
+    padding-top: 16px;
     max-width: 100%;
-
+    height: auto;
   }
-  .section + .section {
-    margin-top: 0; /* Remove margin between sections */
+  
+  .card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Match the card height */
   }
+  
+  .card {
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    font-size: 0.7rem; /* Slightly larger font for readability */
+    height: 200px;
+    width: 40px; /* Slightly wider for balance */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .card img {
+    max-height: 60%; /* Adjusted for better proportion */
+    border-radius: 4px;
+    margin-bottom: 6px;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    font-size: 0.6rem; /* Readable yet compact */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+  }
+  
   .scroll-buttons {
     position: absolute;
     top: 50%;
@@ -50,37 +89,29 @@
     transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
-    width: calc(100% - 40px); /* Adjust width to fit inside with padding */
-    padding: 0 20px;
-    margin: 8px 0;
-    z-index: 10; /* Ensure the arrows are above the cards */
-  }
-  .scroll-left,
-.scroll-right {
-  background-color: #34C94B;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 1.5rem;
-  border-radius: 50%;
-  margin-top: -10px; 
-}
-
-.scroll-left {
-    margin-left: 10px;
+    z-index: 10;
   }
   
+  .scroll-left,
   .scroll-right {
-    margin-right: 10px;
+    background-color: #34c94b;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.2s;
   }
-
-.scroll-left:hover,
-.scroll-right:hover {
-  background-color: #28a745;
-}
-
-.scroll-left:focus,
-.scroll-right:focus {
-  outline: none;
-}
+  
+  .scroll-left:hover,
+  .scroll-right:hover {
+    background-color: #28a745;
+    transform: scale(1.1); /* Slight zoom effect on hover */
+  }
+  
+  .scroll-left:focus,
+  .scroll-right:focus {
+    outline: none;
+  }
+  

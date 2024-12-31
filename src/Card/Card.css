@@ -1,25 +1,36 @@
 .card {
-    border: 1px solid #ddd;
+    background-color: #1e1e1e; /* Match section background */
+    padding: 10px;
     border-radius: 8px;
-    overflow: hidden;
     text-align: center;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-size: 0.9rem;
+    height: 200px; /* Keep taller height */
+    width: 50px; /* Make the card narrower */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
   }
   
-  .card-image {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
+  .card img {
+    max-height: 60%; /* Keep image height proportional */
+    border-radius: 4px;
+    margin-bottom: 8px; /* Space below the image */
+    object-fit: cover; /* Ensure image fits without distortion */
   }
   
   .card-title {
-    font-size: 1rem;
-    margin: 8px 0 4px;
+    font-size: 0.7rem; /* Slightly smaller text */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%; /* Ensure text fits within the card */
   }
   
   .card-subtitle {
-    font-size: 0.875rem;
+    font-size: 0.75rem; /* Smaller subtitle size */
     color: #555;
   }
   
