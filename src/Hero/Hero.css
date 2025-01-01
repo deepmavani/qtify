@@ -16,4 +16,7 @@
     width: 100%; /* Ensures the image fits the card width */
     filter: saturate(1.5) contrast(1.2); /* Enhances colors and contrast */
   }
+  .song-container h1 {
+    color: black;
+  }
   
