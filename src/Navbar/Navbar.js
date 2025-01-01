@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-left">
         <a href="/" className="logo">
-          <img src="/assets/Group 1.png" alt="Logo" className="logo-image" />
+          <img src="/assets/g1.png" alt="Logo" className="logo-image" />
         </a>
       </div>
       <div className="navbar-search">
@@ -24,6 +24,8 @@ const Navbar = () => {
       </div>
       <button className="navbar-feedback">Give Feedback</button>
     </nav>
+
+    
   );
 };
 
