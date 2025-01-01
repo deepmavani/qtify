@@ -2,7 +2,7 @@
     background-color: black;
     padding: 20px; /* Uniform padding around the section */
     position: relative; /* For positioning scroll buttons */
-    border-radius: 10px; /* Rounded corners for the section */
+    /* Rounded corners for the section */
   }
   
   .section-header {
@@ -49,37 +49,7 @@
     height: 200px; /* Match the card height */
   }
   
-  .card {
-    background-color: #1e1e1e;
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
-    color: white;
-    font-size: 0.7rem; /* Slightly larger font for readability */
-    height: 200px;
-    width: 40px; /* Slightly wider for balance */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  }
-  
-  .card img {
-    max-height: 60%; /* Adjusted for better proportion */
-    border-radius: 4px;
-    margin-bottom: 6px;
-    object-fit: cover;
-  }
-  
-  .card-title {
-    font-size: 0.6rem; /* Readable yet compact */
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 100%;
-  }
+ 
   
   .scroll-buttons {
     position: absolute;
@@ -114,4 +84,3 @@
   .scroll-right:focus {
     outline: none;
   }
-  

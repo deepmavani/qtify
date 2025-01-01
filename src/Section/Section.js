@@ -80,13 +80,15 @@ const Section = ({ title, apiEndpoint }) => {
         </div>
       )}
 
-<div className="section-grid" ref={gridRef}>
-  {visibleAlbums.map((album) => (
-    <div className="card-wrapper" key={album.id}>
-      <Card album={album} onClick={() => handleCardClick(album)} />
-    </div>
-  ))}
-</div>
+      <div className="section-grid" ref={gridRef}>
+        {visibleAlbums.map((album) => (
+          <Card
+            key={album.id}
+            album={album}
+            onClick={() => handleCardClick(album)}
+          />
+        ))}
+      </div>
     </div>
   );
 };

@@ -1,36 +1,40 @@
 .card {
-    background-color: #1e1e1e; /* Match section background */
+    background-color: #1e1e1e;
     padding: 10px;
     border-radius: 8px;
     text-align: center;
     color: white;
-    font-size: 0.9rem;
-    height: 200px; /* Keep taller height */
-    width: 50px; /* Make the card narrower */
+    font-size: 0.7rem; /* Readable font size */
+    height: 220px;
+    width: 120px; /* Reduced width for a compact look */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 0 10px; /* Adds space between cards */
   }
   
   .card img {
-    max-height: 60%; /* Keep image height proportional */
+    max-height: 60%; /* Adjusted for better proportion */
     border-radius: 4px;
-    margin-bottom: 8px; /* Space below the image */
-    object-fit: cover; /* Ensure image fits without distortion */
+    margin-bottom: 8px; /* Space between image and title */
+    object-fit: cover;
+    width: 100%; /* Ensures the image fits the card width */
   }
   
   .card-title {
-    font-size: 0.7rem; /* Slightly smaller text */
+    font-size: 0.7rem; /* Maintain consistent font size */
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    width: 100%; /* Ensure text fits within the card */
+    width: 100%;
   }
+  
   
   .card-subtitle {
     font-size: 0.75rem; /* Smaller subtitle size */
-    color: #555;
+    color: #ffffff;
   }
   

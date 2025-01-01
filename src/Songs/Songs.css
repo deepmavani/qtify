@@ -2,7 +2,7 @@
 .songs-section {
     padding: 20px;
     background-color: #000000; /* Light background for the section */
-    color: #333; /* Dark text color */
+    color: #fff9f9; /* Dark text color */
   }
   
   /* Title styling */
@@ -66,14 +66,14 @@
   }
   
   .card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
+
+
     overflow: hidden;
     text-align: center;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow effect */
     flex-shrink: 0; /* Prevent cards from shrinking */
-    width: 250px; /* Fixed card width */
+    width: 130px; /* Fixed card width */
     scroll-snap-align: center; /* Align card in the center on scroll */
   }
   
@@ -97,6 +97,6 @@
     font-size: 1rem;
     margin: 8px 0 4px;
     font-weight: bold;
-    color: #333;
+    color: #ffffff;
   }
   
