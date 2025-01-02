@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react"; 
 import axios from "axios";
 import Card from "../Card/Card";
 import "./Section.css";
@@ -22,24 +22,22 @@ const Section = ({ title, apiEndpoint }) => {
     fetchAlbums();
   }, [apiEndpoint]);
 
-  const visibleAlbums = collapsed ? albums.slice(0, 7) : albums; // Adjust '6' based on your grid size
+  const visibleAlbums = collapsed ? albums.slice(0, 7) : albums;
 
-  // Function to handle right scroll (smooth scroll)
   const scrollRight = () => {
     if (gridRef.current) {
       gridRef.current.scrollBy({
-        left: 200, // Scroll by 200px to the right
-        behavior: "smooth", // Smooth scroll effect
+        left: gridRef.current.offsetWidth, // Scroll by the container's width
+        behavior: "smooth",
       });
     }
   };
 
-  // Function to handle left scroll (smooth scroll)
   const scrollLeft = () => {
     if (gridRef.current) {
       gridRef.current.scrollBy({
-        left: -200, // Scroll by 200px to the left
-        behavior: "smooth", // Smooth scroll effect
+        left: -gridRef.current.offsetWidth, // Scroll back by the container's width
+        behavior: "smooth",
       });
     }
   };
@@ -61,7 +59,7 @@ const Section = ({ title, apiEndpoint }) => {
         </button>
       </div>
 
-      {collapsed && (
+      {albums.length > 7 && collapsed && (
         <div className="scroll-buttons">
           <button
             className="scroll-left"
