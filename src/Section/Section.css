@@ -20,8 +20,8 @@
   
   .collapse-button {
     padding: 8px 16px;
-    background-color: #34c94b;
-    color: white;
+    background-color: #000000;
+    color: #34C94B;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -29,17 +29,17 @@
     transition: background-color 0.3s;
   }
   
-  .collapse-button:hover {
-    background-color: #28a745;
-  }
+  
   
   .section-grid {
+  
     display: grid;
     grid-template-columns: repeat(7, minmax(40px, 1fr)); /* Slightly wider cards for better balance */
     gap: 10px; /* Space between cards */
     padding-top: 16px;
     max-width: 100%;
     height: auto;
+    scroll-behavior: smooth;
   }
   
   .card-wrapper {
